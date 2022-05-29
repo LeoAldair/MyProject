@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.myproject.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="com.example.myproject.WishlistFragment"
+        android:label="fragment_wishlist"
+        tools:layout="@layout/fragment_wishlist" />
+    <fragment
+        android:id="@+id/suggestionFragment"
+        android:name="com.example.myproject.SuggestionFragment"
+        android:label="fragment_suggestion"
+        tools:layout="@layout/fragment_suggestion" >
+        <action
+            android:id="@+id/action_suggestionFragment_to_fragmentProductsDetails2"
+            app:destination="@id/fragmentProductsDetails2" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.myproject.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_fragmentProductDetails"
+            app:destination="@id/fragmentProductDetails" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.example.myproject.UpdateProfileFragment"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" >
+        <action
+            android:id="@+id/action_updateProfileFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProductDetails"
+        android:name="com.example.myproject.FragmentProductDetails"
+        android:label="fragment_product_details"
+        tools:layout="@layout/fragment_product_details" >
+        <action
+            android:id="@+id/action_fragmentProductDetails_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <argument
+            android:name="ID"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentProductsDetails2"
+        android:name="com.example.myproject.FragmentProductsDetails2"
+        android:label="fragment_products_details2"
+        tools:layout="@layout/fragment_products_details2" >
+        <action
+            android:id="@+id/action_fragmentProductsDetails2_to_suggestionFragment"
+            app:destination="@id/suggestionFragment" />
+        <argument
+            android:name="ID"
+            app:argType="string" />
+    </fragment>
+</navigation>

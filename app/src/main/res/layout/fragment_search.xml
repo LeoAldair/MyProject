@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout3"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchFragment">
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="152dp"
+        android:background="@drawable/search_icon"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <EditText
+        android:id="@+id/etSearchEntry"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text=""
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnSearch"
+        app:layout_constraintTop_toBottomOf="@id/ivSearch"
+        />
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:text="Buscar"
+        app:layout_constraintTop_toTopOf="@id/etSearchEntry"
+        app:layout_constraintLeft_toRightOf="@id/etSearchEntry"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/rvProductEntries"
+        android:layout_marginTop="50dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etSearchEntry"
+        tools:listitem="@layout/item_product" />
+</androidx.constraintlayout.widget.ConstraintLayout>

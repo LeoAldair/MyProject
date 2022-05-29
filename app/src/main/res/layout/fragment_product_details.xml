@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentProductDetails">
+
+    <Button
+        android:id="@+id/btnBack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.111"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ivProduct"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/arrow_back_icon"
+        android:backgroundTint="@color/purple_500" />
+
+    <TextView
+        android:id="@+id/tvProductCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="men's clothing"
+        android:textColor="@color/teal_700"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@id/ivProduct"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivProduct"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="26dp"
+        android:background="@color/white"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductCategory" />
+
+    <TextView
+        android:id="@+id/tvProductName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProduct"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btnInsertProduct"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/insert_icon"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductName"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <TextView
+        android:id="@+id/tvProductPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="$0.00"
+        android:textColor="@color/white"
+        android:textSize="21dp"
+        app:layout_constraintBottom_toTopOf="@id/tvProductDescription"
+        app:layout_constraintLeft_toLeftOf="@id/tvProductName"
+        app:layout_constraintRight_toLeftOf="@id/btnInsertProduct"
+        app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+    <TextView
+        android:id="@+id/tvProductDescription"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductPrice"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Product Name"
+        android:textColor="@color/white"
+        android:textSize="13dp" />
+
+    <TextView
+        android:id="@+id/tvProductRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.9"
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.202"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvProductDescription"
+        app:layout_constraintVertical_bias="0.401" />
+
+    <ImageView
+        android:id="@+id/ivProductRate"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/star_icon"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="@id/tvProductRate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@id/tvProductPrice"
+        app:layout_constraintRight_toLeftOf="@id/tvProductRate"
+        app:layout_constraintTop_toTopOf="@id/tvProductRate"
+        app:layout_constraintVertical_bias="0.473" />
+
+    <TextView
+        android:id="@+id/tvProductCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(120 opiniones)"
+        android:textColor="@color/teal_200"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivProductRate"
+        app:layout_constraintVertical_bias="0.159" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

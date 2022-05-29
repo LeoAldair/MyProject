@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/profileFragment"
+        android:title="Perfil"
+        android:icon="@drawable/person_icon"
+        />
+    <item
+        android:id="@+id/suggestionFragment"
+        android:title="Top 5"
+        android:icon="@drawable/suggestion_icon"
+        />
+    <item
+        android:id="@+id/searchFragment"
+        android:title="Buscar"
+        android:icon="@drawable/search_icon"
+        />
+    <item
+        android:id="@+id/wishlistFragment"
+        android:title="Wishlist"
+        android:icon="@drawable/wishlist_icon"
+        />
+</menu>

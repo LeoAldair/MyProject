@@ -22,31 +22,25 @@ class UpdateProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentUpdateProfileBinding.inflate(layoutInflater)
-        val usuario = "Leonardo"
-        var wishlist = 0
+        val user_id = getString(R.string.user)
         var nivel = 0
         val navController = findNavController()
         val database = Firebase.database
         val myRef = database.reference
-        myRef.child("Users").get().addOnSuccessListener { response ->
-            Log.d("json123",response.value.toString())
-            val resmap = response.value as ArrayList<Map<String, Any>>
-            resmap.forEach { user ->
-                if(!user.isNullOrEmpty() && user["name"] == usuario){
-                    binding.etUserFirstNameData.setText(user["name"].toString())
-                    binding.etUserLastNameData.setText(user["last"].toString())
-                    binding.etUserEmailData.setText(user["email"].toString())
-                    wishlist = user["wishlist"].toString().toInt()
-                    nivel = user["level"].toString().toInt()
-                }
-            }
-
-
-        }.addOnFailureListener {
-            Log.e("json123", "FATALError")
+        myRef.child("Users").child(user_id).child("name").get().addOnSuccessListener { userName ->
+            binding.etUserFirstNameData.setText(userName.value.toString())
+        }
+        myRef.child("Users").child(user_id).child("last").get().addOnSuccessListener { userLast ->
+            binding.etUserLastNameData.setText(userLast.value.toString())
+        }
+        myRef.child("Users").child(user_id).child("email").get().addOnSuccessListener { userEmail ->
+            binding.etUserEmailData.setText(userEmail.value.toString())
+        }
+        myRef.child("Users").child(user_id).child("level").get().addOnSuccessListener { userLevel ->
+            nivel = userLevel.value.toString().toInt()
         }
         binding.btnUpdateUser.setOnClickListener {
-            myRef.child("Users").child("1").setValue(User(binding.etUserFirstNameData.text.toString(),binding.etUserLastNameData.text.toString(),binding.etUserEmailData.text.toString(), wishlist, nivel))
+            myRef.child("Users").child(getString(R.string.user)).setValue(User(binding.etUserFirstNameData.text.toString(),binding.etUserLastNameData.text.toString(),binding.etUserEmailData.text.toString(), nivel.toString()))
             navController.navigate(R.id.action_updateProfileFragment_to_profileFragment)
         }
         binding.btnBack.setOnClickListener {

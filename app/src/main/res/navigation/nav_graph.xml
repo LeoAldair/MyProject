@@ -18,7 +18,11 @@
         android:id="@+id/wishlistFragment"
         android:name="com.example.myproject.WishlistFragment"
         android:label="fragment_wishlist"
-        tools:layout="@layout/fragment_wishlist" />
+        tools:layout="@layout/fragment_wishlist" >
+        <action
+            android:id="@+id/action_wishlistFragment_self"
+            app:destination="@id/wishlistFragment" />
+    </fragment>
     <fragment
         android:id="@+id/suggestionFragment"
         android:name="com.example.myproject.SuggestionFragment"
